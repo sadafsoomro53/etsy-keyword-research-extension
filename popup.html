@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Etsy Keyword Research Lab</title><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header><div class="mark">E</div><div><h1>Etsy Keyword Lab</h1><p>Discover · Validate · Export</p></div></header>
+<main>
+<section class="panel">
+  <label for="seed">Seed keyword / product niche</label>
+  <input id="seed" placeholder="e.g. mug mockup" value="">
+  <div class="two">
+    <div><label for="limit">Candidate limit</label><select id="limit"><option>50</option><option selected>150</option><option>300</option><option>500</option></select></div>
+    <div><label for="country">Target countries</label><select id="country"><option value="USA,UK,Canada,Germany" selected>US, UK, CA, DE</option><option value="USA">USA only</option><option value="UK">UK only</option><option value="Canada">Canada only</option><option value="Germany">Germany only</option></select></div>
+  </div>
+  <button id="generate" class="primary">1. Generate keyword candidates</button>
+  <p class="hint">Uses Etsy-oriented autocomplete prompts, modifiers, audience, occasion, format and micro-niche combinations. Suggestions are candidates, not verified demand.</p>
+</section>
+<section class="panel">
+  <h2>2. Collect actual source data</h2>
+  <button id="scan" class="secondary">Scan current RankKW / Etsy tab</button>
+  <p class="hint">Open RankKW's keyword results or an Etsy search-results page first. The extension reads visible page text and tables only; it does not bypass logins, CAPTCHAs, paywalls or access controls.</p>
+  <label for="csvfile" class="filelabel">Or import a RankKW CSV export</label>
+  <input id="csvfile" type="file" accept=".csv,text/csv">
+  <button id="import" class="secondary">Import selected CSV</button>
+</section>
+<section class="panel">
+  <h2>3. Qualification criteria</h2>
+  <div class="criteria">
+    <div>Competition <b>&lt; 50,000</b></div><div>Avg. views <b>&gt; 5,000</b></div>
+    <div>Avg. price <b>&gt; $2</b></div><div>Favs / view <b>&gt; 1%</b></div>
+    <div>Google volume <b>Green / Good</b></div><div>12-month trend <b>Stable / Growing</b></div>
+    <div>Target country <b>US / UK / CA / DE</b></div><div>KD <b>&lt; 50</b></div>
+  </div>
+  <p class="hint">Every criterion is mandatory. Missing/ambiguous metrics are CHECK, never PASS. Metrics must come from the source, not be guessed.</p>
+</section>
+<section class="panel results">
+  <div class="stats"><div><span id="total">0</span><small>Unique candidates</small></div><div><span id="passed">0</span><small>PASS</small></div><div><span id="checked">0</span><small>CHECK / skipped</small></div></div>
+  <div id="status" role="status">Ready. Generate candidates, scan a source tab, or import a CSV.</div>
+  <button id="exportPass" class="primary" disabled>Export PASS keywords CSV</button>
+  <button id="exportAll" class="secondary" disabled>Export audit CSV (PASS + CHECK)</button>
+  <button id="clear" class="textbtn">Clear session</button>
+</section>
+</main>
+<footer>Local-first · No keyword metrics are invented · v0.2.0</footer>
+<script src="methods.js"></script><script src="popup.js"></script>
+</body></html>

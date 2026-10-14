@@ -1,0 +1,8 @@
+{
+  "manifest_version": 3,
+  "name": "Etsy Keyword Research Lab",
+  "version": "0.2.0",
+  "description": "Discover Etsy keyword candidates, validate RankKW metrics against your assignment criteria, and export qualifying keywords to CSV.",
+  "action": {"default_title": "Etsy Keyword Research Lab", "default_popup": "popup.html"},
+  "permissions": ["activeTab", "scripting", "storage", "downloads", "tabs"]
+}
